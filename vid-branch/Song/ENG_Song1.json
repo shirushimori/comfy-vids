@@ -12,12 +12,12 @@
         "episodes": [
           {
             "episode": 1,
-            "title": "Episode 1",
+            "title": "Dandelions",
             "video-iframe": "<iframe width=\"640\" height=\"360\" src=\"https://short.icu/4t1Kg-AjZ\" frameborder=\"0\" scrolling=\"0\" allowfullscreen></iframe>"
           },
           {
             "episode": 2,
-            "title": "Episode 2",
+            "title": "Maroon 5 - Memories",
             "video-iframe": "<iframe width=\"640\" height=\"360\" src=\"https://short.icu/0OaUjdnpS\" frameborder=\"0\" scrolling=\"0\" allowfullscreen></iframe>"
           }
         ]
