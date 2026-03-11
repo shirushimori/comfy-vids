@@ -130,7 +130,7 @@ Videos are stored in `data.json`. Here's the structure:
       "id": "unique-id",
       "title": "Video Title",
       "author": "Author Name",
-      "date": "2024-03-11",
+      "date": "2025-03-11",
       "description": "Video description here",
       "thumbnail": "https://example.com/thumbnail.jpg",
       "seasons": [
@@ -204,7 +204,7 @@ Videos are stored in `data.json`. Here's the structure:
   "id": "my-anime-series",
   "title": "My Awesome Anime",
   "author": "Studio Name",
-  "date": "2024-03-11",
+  "date": "2025-03-11",
   "description": "An amazing anime series with great storytelling and animation.",
   "thumbnail": "https://files.catbox.moe/abc123.jpg",
   "seasons": [
@@ -513,7 +513,7 @@ Built with vanilla JavaScript, HTML5, and CSS3.
 
 **A tool for video streaming**
 
-Last Updated: March 2024
+Last Updated: March 2025
 
 ---
 
