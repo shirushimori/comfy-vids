@@ -2,6 +2,8 @@
 
 A modern, fully responsive video streaming platform built with vanilla JavaScript, HTML, and CSS. Stream your own videos with a sleek dark-themed interface featuring episode management, custom data sources, and a powerful JSON editor.
 
+🌐 **Live Demo:** https://shirushimori.github.io/comfy-vids/
+
 ![Comfy Hub](favicon.svg)
 
 ## Features
@@ -51,33 +53,51 @@ comfy-hub/
 ### Prerequisites
 - A modern web browser (Chrome, Firefox, Safari, Edge)
 - No server required - runs entirely in the browser
-- Optional: Local server for development (recommended)
+- No installation needed - works out of the box
 
-### Installation
+### Quick Start (Recommended)
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/comfy-hub.git
-   cd comfy-hub
-   ```
+**🚀 Live Demo:**
+Visit the live site: **https://shirushimori.github.io/comfy-vids/**
 
-2. **Run locally (optional but recommended)**
-   ```bash
-   # Using Python 3
-   python -m http.server 8000
-   
-   # Using Python 2
-   python -m SimpleHTTPServer 8000
-   
-   # Using Node.js (http-server)
-   npx http-server
-   ```
+**Easiest Method - Open Directly:**
+1. Download or clone the repository
+2. Open `index.html` directly in your browser
+3. That's it! The app is ready to use
 
-3. **Open in browser**
-   - Direct: Open `index.html` in your browser
-   - Local server: Navigate to `http://localhost:8000`
+```bash
+# Clone the repository
+git clone https://github.com/shirushimori/comfy-vids.git
+cd comfy-vids
+
+# Simply open index.html in your browser
+# No server needed!
+```
+
+### Alternative: Local Server (Optional)
+
+If you prefer running a local server:
+
+```bash
+# Using Python 3
+python -m http.server 8000
+
+# Using Python 2
+python -m SimpleHTTPServer 8000
+
+# Using Node.js (http-server)
+npx http-server
+```
+
+Then navigate to `http://localhost:8000`
 
 ## Adding Your Videos
+
+### ⚡ Recommended Approach
+
+**Keep it simple!** Edit `data.json` directly - it's the most reliable method.
+
+> ⚠️ **Note:** The JSON Editor and Admin Panel features can be unstable. We recommend using the direct JSON editing method below for best results.
 
 ### Video Data Format
 
@@ -110,34 +130,51 @@ Videos are stored in `data.json`. Here's the structure:
 }
 ```
 
-### How to Add Videos
+### How to Add Videos (Recommended Method)
 
-#### Method 1: Using the Admin Panel (Recommended)
-1. Navigate to `admin.html`
-2. Click "JSON Editor" tab
-3. Click "+ Add Video" button
-4. Fill in video details
-5. Add seasons and episodes
-6. Click "Save JSON"
-
-#### Method 2: Direct JSON Editing
+**Direct JSON Editing (Most Reliable):**
 1. Open `data.json` in your text editor
 2. Add video objects following the format above
 3. Save the file
-4. Refresh the app
+4. Refresh the app in your browser
+5. Your videos will appear immediately!
 
-### Video Hosting Options
+### Video Hosting Services
 
-**For Embedded Videos:**
-- YouTube: Use embed URLs like `https://www.youtube.com/embed/VIDEO_ID`
-- Vimeo: Use embed URLs like `https://player.vimeo.com/video/VIDEO_ID`
-- Custom Server: Host on your own server and embed
-- Other Platforms: Any platform that provides embed codes
+#### 🎬 For Video Hosting
 
-**For Thumbnails:**
-- Use direct image URLs (JPEG, PNG, WebP)
-- Recommended size: 320x180px or larger
-- Can be hosted on any image hosting service
+**Recommended: [Abyss.to](https://abyss.to)**
+- Free video hosting
+- No account required
+- Get embed code directly
+- Supports multiple formats
+- No file size limits
+
+**How to use Abyss.to:**
+1. Visit https://abyss.to
+2. Upload your video
+3. Copy the embed code
+4. Paste into the `iframe` field in `data.json`
+
+#### 🖼️ For Thumbnails & Files (Under 200MB)
+
+**Recommended: [Catbox.moe](https://catbox.moe)**
+- Free file hosting
+- Up to 200MB per file
+- No account required
+- Direct links
+- Reliable and fast
+
+**How to use Catbox.moe:**
+1. Visit https://catbox.moe
+2. Upload your thumbnail image or file
+3. Copy the direct link
+4. Use in `data.json` thumbnail field
+
+#### Alternative Video Hosting
+- **YouTube**: Use embed URLs like `https://www.youtube.com/embed/VIDEO_ID`
+- **Vimeo**: Use embed URLs like `https://player.vimeo.com/video/VIDEO_ID`
+- **Any Platform**: That provides embed codes
 
 ### Example Video Entry
 
@@ -148,7 +185,7 @@ Videos are stored in `data.json`. Here's the structure:
   "author": "Studio Name",
   "date": "2024-03-11",
   "description": "An amazing anime series with great storytelling and animation.",
-  "thumbnail": "https://example.com/anime-thumbnail.jpg",
+  "thumbnail": "https://files.catbox.moe/abc123.jpg",
   "seasons": [
     {
       "season": 1,
@@ -156,18 +193,29 @@ Videos are stored in `data.json`. Here's the structure:
         {
           "episode": 1,
           "title": "The Beginning",
-          "iframe": "<iframe src=\"https://www.youtube.com/embed/dQw4w9WgXcQ\" width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen></iframe>"
+          "iframe": "<iframe src=\"https://abyss.to/embed/abc123\" width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen></iframe>"
         },
         {
           "episode": 2,
           "title": "The Journey",
-          "iframe": "<iframe src=\"https://www.youtube.com/embed/dQw4w9WgXcQ\" width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen></iframe>"
+          "iframe": "<iframe src=\"https://abyss.to/embed/def456\" width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen></iframe>"
         }
       ]
     }
   ]
 }
 ```
+
+### Quick Setup Checklist
+
+- [ ] Upload video to [Abyss.to](https://abyss.to)
+- [ ] Get embed code from Abyss.to
+- [ ] Upload thumbnail to [Catbox.moe](https://catbox.moe)
+- [ ] Get thumbnail link from Catbox.moe
+- [ ] Edit `data.json` with your video info
+- [ ] Save `data.json`
+- [ ] Refresh browser
+- [ ] Done! Video appears in app
 
 ## Customization
 
@@ -241,12 +289,7 @@ Modify padding/margins in respective CSS files for different layouts.
 - **Data Source**: Select content categories
 - **Custom URLs**: Add custom JSON data sources
 
-### Admin Panel (`admin.html`)
-- **Settings Tab**: Same as main settings
-- **JSON Editor Tab**: 
-  - Add/edit/delete videos
-  - Manage seasons and episodes
-  - Save changes to local storage
+> ⚠️ **Note:** The Admin Panel and JSON Editor features can be unstable. For best results, edit `data.json` directly in your text editor.
 
 ## Data Sources
 
@@ -319,9 +362,22 @@ Clear storage: Open DevTools → Application → Local Storage → Clear All
 ## Troubleshooting
 
 ### Videos not loading
-- Check `data.json` format is valid JSON
+- Check `data.json` format is valid JSON (use [JSONLint](https://jsonlint.com) to validate)
 - Verify iframe URLs are correct
 - Check browser console for errors (F12)
+- Ensure Abyss.to or your video host is accessible
+
+### Videos not appearing after editing data.json
+- Save the file
+- Hard refresh browser (Ctrl+Shift+R or Cmd+Shift+R)
+- Check JSON syntax is valid
+- Verify all required fields are present
+
+### Thumbnails not showing
+- Verify Catbox.moe link is correct
+- Check image format is supported (JPG, PNG, WebP)
+- Ensure URL is accessible
+- Try a different image hosting service
 
 ### Settings not saving
 - Ensure local storage is enabled
@@ -395,6 +451,26 @@ For issues, questions, or suggestions:
 - [ ] Social sharing
 - [ ] Progressive Web App (PWA)
 
+## Quick Reference
+
+### Recommended Services
+| Service | Purpose | Link | Notes |
+|---------|---------|------|-------|
+| Abyss.to | Video Hosting | https://abyss.to | Free, no account needed |
+| Catbox.moe | File/Image Hosting | https://catbox.moe | Up to 200MB, no account needed |
+| JSONLint | JSON Validation | https://jsonlint.com | Validate data.json syntax |
+
+### File Editing Tips
+- Use a code editor (VS Code, Sublime, Notepad++)
+- Always validate JSON before saving
+- Keep backups of working data.json
+- Use proper indentation for readability
+
+### Performance Tips
+1. **Optimize Thumbnails** - Use compressed images (WebP format)
+2. **Use Reliable Hosts** - Abyss.to and Catbox.moe are recommended
+3. **Keep JSON Clean** - Remove unused entries
+4. **Browser Caching** - CSS/JS files are cached automatically
 ## Credits
 
 Built with vanilla JavaScript, HTML5, and CSS3.
@@ -404,3 +480,26 @@ Built with vanilla JavaScript, HTML5, and CSS3.
 **Made with ❤️ for video streaming enthusiasts**
 
 Last Updated: March 2024
+
+---
+
+## 📌 Important Notes
+
+### Why Direct JSON Editing?
+- ✅ Most reliable method
+- ✅ No bugs or glitches
+- ✅ Full control over data
+- ✅ Easy to backup and version control
+- ❌ Admin Panel/JSON Editor can be unstable - avoid for production
+
+### Why These Services?
+- **Abyss.to**: Free, fast, no limits, perfect for video hosting
+- **Catbox.moe**: Free, reliable, 200MB limit, great for thumbnails and files
+- Both require no account and no technical setup
+
+### Getting Started in 5 Minutes
+1. Open `data.json` in a text editor
+2. Add your video info (copy the example format)
+3. Upload video to Abyss.to, get embed code
+4. Upload thumbnail to Catbox.moe, get link
+5. Paste links into `data.json`, save, refresh browser - Done!
