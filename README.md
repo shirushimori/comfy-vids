@@ -97,7 +97,27 @@ Then navigate to `http://localhost:8000`
 
 **Keep it simple!** Edit `data.json` directly - it's the most reliable method.
 
-> ⚠️ **Note:** The JSON Editor and Admin Panel features can be unstable. We recommend using the direct JSON editing method below for best results.
+> ⚠️ **Note:** The JSON Editor and Admin Panel features can be unstable. I recommend using the direct JSON editing method below for best results.
+
+### Best Practice: Host JSON on GitHub
+
+For the most reliable setup, host your `data.json` on GitHub:
+
+1. **Create a GitHub repository** for your video data
+2. **Upload `data.json`** to the repository
+3. **Use the raw GitHub URL** in your app
+4. **Get the raw file URL:**
+   - Go to your `data.json` file on GitHub
+   - Click "Raw" button
+   - Copy the URL (format: `https://raw.githubusercontent.com/username/repo/main/data.json`)
+5. **Add to Settings → Data Source → Custom JSON URL**
+
+**Benefits:**
+- ✅ Free hosting
+- ✅ Version control & backup
+- ✅ Easy to update
+- ✅ Reliable CDN delivery
+- ✅ No file size limits
 
 ### Video Data Format
 
@@ -296,15 +316,26 @@ Modify padding/margins in respective CSS files for different layouts.
 The app supports multiple data sources:
 
 1. **Built-in Data** - `data.json` in the project
-2. **Custom URLs** - Add via Settings panel
-3. **Local Storage** - Changes persist in browser
+2. **GitHub Hosted JSON** - Recommended for custom data (see "Best Practice: Host JSON on GitHub" above)
+3. **Custom URLs** - Add via Settings panel
+4. **Local Storage** - Changes persist in browser
 
 ### Adding Custom Data Sources
 
-1. Go to Settings → Data Source
-2. Enter your JSON URL in "Custom JSON URL"
-3. Click "Add"
-4. The app will merge your data with existing sources
+**Method 1: GitHub (Recommended)**
+1. Create a GitHub repo with your `data.json`
+2. Get the raw file URL from GitHub
+3. Go to Settings → Data Source → Custom JSON URL
+4. Paste the raw GitHub URL
+5. Click "Add"
+
+**Method 2: Any Custom URL**
+1. Host your JSON file anywhere (Catbox.moe, etc.)
+2. Go to Settings → Data Source → Custom JSON URL
+3. Paste the URL
+4. Click "Add"
+
+The app will merge your data with existing sources.
 
 **Custom JSON Format** - Same as `data.json` structure
 
@@ -456,6 +487,7 @@ For issues, questions, or suggestions:
 ### Recommended Services
 | Service | Purpose | Link | Notes |
 |---------|---------|------|-------|
+| GitHub | JSON Hosting | https://github.com | **BEST** - Free, reliable, version control |
 | Abyss.to | Video Hosting | https://abyss.to | Free, no account needed |
 | Catbox.moe | File/Image Hosting | https://catbox.moe | Up to 200MB, no account needed |
 | JSONLint | JSON Validation | https://jsonlint.com | Validate data.json syntax |
@@ -468,7 +500,7 @@ For issues, questions, or suggestions:
 
 ### Performance Tips
 1. **Optimize Thumbnails** - Use compressed images (WebP format)
-2. **Use Reliable Hosts** - Abyss.to and Catbox.moe are recommended
+2. **Use Reliable Hosts** - GitHub for JSON, Abyss.to for videos, Catbox.moe for images
 3. **Keep JSON Clean** - Remove unused entries
 4. **Browser Caching** - CSS/JS files are cached automatically
 ## Credits
@@ -492,14 +524,23 @@ Last Updated: March 2024
 - ✅ Easy to backup and version control
 - ❌ Admin Panel/JSON Editor can be unstable - avoid for production
 
+### Why GitHub for JSON Hosting?
+- **Free** - No cost, unlimited storage
+- **Reliable** - GitHub's CDN ensures fast delivery
+- **Version Control** - Track all changes to your data
+- **Easy Updates** - Edit directly on GitHub or locally
+- **Backup** - Automatic backup of all versions
+- **Shareable** - Easy to share raw URLs with others
+
 ### Why These Services?
-- **Abyss.to**: Free, fast, no limits, perfect for video hosting
-- **Catbox.moe**: Free, reliable, 200MB limit, great for thumbnails and files
-- Both require no account and no technical setup
+- **GitHub**: Best for JSON hosting - free, reliable, version control
+- **Abyss.to**: Free video hosting, no limits
+- **Catbox.moe**: Free file/image hosting, up to 200MB
+- All require no account and no technical setup
 
 ### Getting Started in 5 Minutes
-1. Open `data.json` in a text editor
-2. Add your video info (copy the example format)
-3. Upload video to Abyss.to, get embed code
-4. Upload thumbnail to Catbox.moe, get link
-5. Paste links into `data.json`, save, refresh browser - Done!
+1. Create a GitHub repository
+2. Upload `data.json` to GitHub
+3. Get the raw file URL from GitHub
+4. Add URL to Settings → Data Source → Custom JSON URL
+5. Videos appear in app - Done!
