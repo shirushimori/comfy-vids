@@ -165,16 +165,17 @@ Videos are stored in `data.json`. Here's the structure:
 
 **Recommended: [Abyss.to](https://abyss.to)**
 - Free video hosting
-- No account required
+- Signup required (free account)
 - Get embed code directly
 - Supports multiple formats
 - No file size limits
 
 **How to use Abyss.to:**
 1. Visit https://abyss.to
-2. Upload your video
-3. Copy the embed code
-4. Paste into the `iframe` field in `data.json`
+2. Sign up for a free account
+3. Upload your video
+4. Copy the embed code
+5. Paste into the `iframe` field in `data.json`
 
 #### 🖼️ For Thumbnails & Files (Under 200MB)
 
@@ -228,7 +229,8 @@ Videos are stored in `data.json`. Here's the structure:
 
 ### Quick Setup Checklist
 
-- [ ] Upload video to [Abyss.to](https://abyss.to)
+- [ ] Sign up for free account at [Abyss.to](https://abyss.to)
+- [ ] Upload video to Abyss.to
 - [ ] Get embed code from Abyss.to
 - [ ] Upload thumbnail to [Catbox.moe](https://catbox.moe)
 - [ ] Get thumbnail link from Catbox.moe
@@ -485,12 +487,12 @@ For issues, questions, or suggestions:
 ## Quick Reference
 
 ### Recommended Services
-| Service | Purpose | Link | Notes |
-|---------|---------|------|-------|
-| GitHub | JSON Hosting | https://github.com | **BEST** - Free, reliable, version control |
-| Abyss.to | Video Hosting | https://abyss.to | Free, no account needed |
-| Catbox.moe | File/Image Hosting | https://catbox.moe | Up to 200MB, no account needed |
-| JSONLint | JSON Validation | https://jsonlint.com | Validate data.json syntax |
+| Service | Purpose | Link | Signup | Notes |
+|---------|---------|------|--------|-------|
+| GitHub | JSON Hosting | https://github.com | Free | **BEST** - Free, reliable, version control |
+| Abyss.to | Video Hosting | https://abyss.to | Required | Free account, no limits |
+| Catbox.moe | File/Image Hosting | https://catbox.moe | Not needed | Up to 200MB, no signup |
+| JSONLint | JSON Validation | https://jsonlint.com | Not needed | Validate data.json syntax |
 
 ### File Editing Tips
 - Use a code editor (VS Code, Sublime, Notepad++)
@@ -509,7 +511,7 @@ Built with vanilla JavaScript, HTML5, and CSS3.
 
 ---
 
-**Made with ❤️ for video streaming enthusiasts**
+**A tool for video streaming**
 
 Last Updated: March 2024
 
@@ -534,13 +536,17 @@ Last Updated: March 2024
 
 ### Why These Services?
 - **GitHub**: Best for JSON hosting - free, reliable, version control
-- **Abyss.to**: Free video hosting, no limits
-- **Catbox.moe**: Free file/image hosting, up to 200MB
-- All require no account and no technical setup
+- **Abyss.to**: Free video hosting (signup required), no limits
+- **Catbox.moe**: Free file/image hosting, up to 200MB, no signup needed
+- All are reliable and easy to use
 
 ### Getting Started in 5 Minutes
 1. Create a GitHub repository
 2. Upload `data.json` to GitHub
 3. Get the raw file URL from GitHub
-4. Add URL to Settings → Data Source → Custom JSON URL
-5. Videos appear in app - Done!
+4. Sign up for free account at Abyss.to
+5. Upload video to Abyss.to, get embed code
+6. Upload thumbnail to Catbox.moe, get link
+7. Add video info to `data.json` with embed codes
+8. Add GitHub JSON URL to Settings → Data Source → Custom JSON URL
+9. Videos appear in app - Done!
